@@ -1,0 +1,200 @@
+html, body, div, span, applet, object,iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font: 14px/18px "Times New Roman", Times, sans-serif;
+    background-color: gray;
+    position: absolute;
+}
+
+ol, ul {list-style: none;}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a, a:hover {text-decoration: none;}
+
+.clearFix:before,
+.clearFix:after {
+    content: " ";
+    display: table;
+}
+
+.clearFix:after {clear: both;}
+
+.left {float: left;}
+.right {float: right;}
+
+body svg {
+    transform: translate(-25%, -20%);
+}
+
+.previous:hover, .next:hover {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.holster {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    font-family: monospace;
+    position: relative;
+    height: inherit;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+  
+.container {
+    display: flex;
+    overflow: auto;
+    outline: 1px dashed lightgray;
+    flex: none;
+    position: relative;
+}
+  
+.container.x {
+    width: 100%;
+    height: inherit;
+    flex-flow: row nowrap;
+}
+
+/* scroll-snap */
+.x.mandatory-scroll-snapping {
+    scroll-snap-type: x mandatory;
+}
+  
+.container > div {
+    text-align: center;
+    scroll-snap-align: center;
+    flex: none;
+}
+  
+.x.container > div {
+    width: 100%;
+    height: inherit;
+}
+  
+/* coloration */
+.container > div:nth-child(even) {
+    background-color: #87EA87;
+}
+  
+.container > div:nth-child(odd) {
+    background-color: #87CCEA;
+}
+
+.previous, .next {
+    position: absolute;
+    transform: translate(0, -50%);
+}
+
+.previous {
+    top: 50%;
+    left: 0;
+}
+
+.next {
+    top: 50%;
+    right: 0;
+}
+
+::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    height: 0; /* высота scrollbar'a */
+    background: transparent;  /* опционально */
+}
+
+html {
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+#container .item:nth-child(1) {
+    background: url(img/img1.jpg) 50% no-repeat;
+    background-size: contain;
+}
+
+#container .item:nth-child(2) {
+    background: url(img/img2.jpg) 50% no-repeat;
+    background-size: contain;
+}
+
+#container .item:nth-child(3) {
+    background: url(img/img3.jpg) 50% no-repeat;
+    background-size: contain;
+}
+
+#container .item:nth-child(4) {
+    background: url(img/img4.jpg) 50% no-repeat;
+    background-size: contain;
+}
+
+#container .item:nth-child(5) {
+    background: url(img/img5.jpg) 50% no-repeat;
+    background-size: contain;
+}
+
+html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+
+/* Кружочки */
+.holster_dots {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 5;
+    width: fit-content;
+}
+
+.dots{
+    cursor: pointer;
+    height: 30px;
+    width: 45px;
+    margin: 0 2px;
+    /* background-color: #ddd78c; */
+    border-radius: 10%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 5;
+}
+
+.dots img {
+    width: 45px;
+    height: 30px;
+    opacity: 0.7;
+    border: black 2px solid;
+}
+
+.active,
+.dots img:hover {
+    background-color: rgba(248, 244, 28, 0.9);
+    z-index: 6;
+}

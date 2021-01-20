@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, target-densitydpi=device-dpi, initial-scale=1">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="holster" id="holster">
+        <div class="container x mandatory-scroll-snapping" id='container' dir="ltr">
+            <div class="item" id="item"></div>
+            <div class="item" id="item"></div>
+            <div class="item" id="item"></div>
+            <div class="item" id="item"></div>
+            <div class="item" id="item"></div>
+        </div>
+        <div class="holster_dots">
+            <span class="dots" onclick="currentSlide(1)"><img src="img/img1.jpg"></span>
+            <span class="dots" onclick="currentSlide(2)"><img src="img/img2.jpg"></span>
+            <span class="dots" onclick="currentSlide(3)"><img src="img/img3.jpg"></span>
+            <span class="dots" onclick="currentSlide(4)"><img src="img/img4.jpg"></span>
+            <span class="dots" onclick="currentSlide(5)"><img src="img/img5.jpg"></span>
+        </div>
+        <a class="previous" id="previous" onclick="previous()">
+            <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24.6001 30L33.6001 21L34.8601 22.26L27.1201 30L34.8601 37.74L33.6001 39L24.6001 30Z" fill="white" stroke="white" fill-opacity="0.8"/>
+            </svg>
+        </a>
+        <a class="next" id="next" onclick='next()'>
+            <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M35.4001 30L26.4001 39L25.1401 37.74L32.8801 30L25.1401 22.26L26.4001 21L35.4001 30Z" fill="white" stroke="white" fill-opacity="0.8"/>
+            </svg>
+        </a>
+        <div id="area"></div>
+    </div> 
+    <script src="js.js"></script>   
+</body>
+</html>
